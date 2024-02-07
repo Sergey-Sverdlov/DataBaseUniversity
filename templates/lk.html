@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Личный кабинет
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> Личный кабинет </h1>
+            <div class="alert alert-info">
+                <h2> Имя пользователя(логин для входа): {{ user.username }}</h2>
+                <p> Email: {{ user.email }}</p>
+                <p> Мобильный телефон: {{ user.mobile }}</p>
+                <a href="selected">Избранные вузы</a>
+            </div>
+    </div>
+{% endblock %}

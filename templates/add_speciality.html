@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}
+Добавление специальности
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> Добавление специальности </h1>
+        <form method="post">
+            <label for="name_speciality">Название специальности </label>
+            <input type="text" name="name_speciality" id="name_speciality" class="form-control"> <br />
+            <label for="number_speciality">Номер специальности</label>
+            <input type="text" name="number_speciality" id="number_speciality" class="form-control"> <br />
+            <label for="rank_speciality">Рейтинг специальности</label>
+            <input type="number" name="rank_speciality" id="rank_speciality" value= > <br />
+            <br/>
+            <input type="submit" class="btn btn-success" value="Добавить специальности">
+        </form>
+    </div>
+{% endblock %}

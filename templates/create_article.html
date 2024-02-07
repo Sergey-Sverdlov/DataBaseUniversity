@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+Добавление статьи
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> Добавление университета </h1>
+        <form method="post">
+            <input type="text" name="name" id="name" class="form-control" placeholder="Название университета"> <br />
+            <input type="number" name="year_construction" id="year_construction" class="form-control" placeholder="Год постройки "> <br />
+            <input type="number" name="year_repair" id="year_repair" placeholder="Год ремонта "><br />
+            <br/>
+            <input type="number" name="count_student" id="count_student" placeholder="Количество студентов"  />
+            <br/>
+            <br/>
+            <input type="number" name="min_cost" id="min_cost" placeholder="Стоимость за обучение"  />
+            <br/>
+            <br/>
+            <input type="number" name="male" id="male" placeholder="Количество парней"  />
+            <br/>
+            <br/>
+            <input type="number" name="female" id="female" placeholder="Количество девушек"  />
+            <br/>
+            <br/>
+            <input type="number" name="qs" id="qs" placeholder="Место в рейтинге QS"  />
+            <br/>
+            <br/>
+            <input type="number" name="the" id="the" placeholder="Место в рейтинге THE"  />
+            <br/>
+            <br/>
+            <input type="number" name="raex" id="raex" placeholder="Место в рейтинге RAEX"  />
+            <br/>
+            <br/>
+            <textarea name="intro" id="intro" style="width: 900px">Введите краткое описание университета</textarea>
+            <br/>
+            <br/>
+            <textarea name="about" id="about" style="width: 900px">Введите полное описание университета</textarea>
+            <br/>
+            <br/>
+            <input type="submit" class="btn btn-success" value="Добавить университет">
+        </form>
+    </div>
+{% endblock %}

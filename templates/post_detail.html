@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+{{ university.name }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> {{ university.name }} </h1>
+
+            <div class="alert alert-info">
+                <h2> Название университета: {{  university.name }}</h2>
+                <p> Год постройки: {{ university.year_construction }}</p>
+                <p> Год ремонта: {{ university.year_repair }}</p>
+                <p>Количество студентов: {{ university.count_student }}</p>
+                <p> Количество парней: {{ male_female.count_male }}</p>
+                <p> Количество девушек: {{ male_female.count_female }}</p>
+                <p> Место в рейтинге QS:  {{ rank.position_qs }}</p>
+                <p> Место в рейтинге THE:  {{ rank.position_the }}</p>
+                <p> Место в рейтинге RAEX:  {{ rank.position_raex }}</p>
+                <p>Минимальная стоимость обучения: {{ university.min_cost }}</p>
+
+                {% for specialit in speciality %}
+                <p>Специальность: {{ specialit[3] }} Рейтинг специальности: {{ specialit[5] }}
+                </p>
+                {% endfor %}
+                <p> {{ university.about }}</p>
+                <a href="/university/{{ university.id }}/add_to_selected" class="btn btn-danger">Добавить в избранное</a>
+                {% if type_user == 'admin' %}
+                <a href="/posts/{{ university.id }}/delete" class="btn btn-danger">Удалить</a>
+                <a href="/posts/{{ university.id }}/update" class="btn btn-success">Редактировать</a>
+                    <a href="/posts/{{ university.id }}/add_speciality" class="btn btn-success">Добавить специальность</a>
+                {% endif %}
+            </div>
+    </div>
+{% endblock %}

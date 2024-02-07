@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}
+Обновление запроса
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> Изменение запроса </h1>
+        <form method="post">
+            <textarea name="intro" id="intro" style="width: 900px">{{ query.intro }}</textarea>
+            <br/>
+            <br/>
+            <textarea name="full_text" id="full_text" style="width: 900px">{{ query.full_text }}</textarea>
+            <br/>
+            <br/>
+            <input type="submit" class="btn btn-success" value="Обновить запрос">
+        </form>
+    </div>
+{% endblock %}

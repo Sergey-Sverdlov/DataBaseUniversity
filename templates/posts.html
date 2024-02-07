@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+{% if my_title|length > 0 %}
+    {{ my_titletitle }}
+{% endif %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> {{ my_title }} </h1>
+        {% if universities|length > 0 %}
+            {% for university in universities %}
+                <div class="alert alert-info">
+                    <h2> {{  university.name }}</h2>
+                    <p> {{ university.intro }}</p>
+                    <a href="/posts/{{ university.id }}" class="btn btn-warning">Детальнее</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У нас еще нет университетов на сайте</p>
+        {% endif %}
+    </div>
+{% endblock %}

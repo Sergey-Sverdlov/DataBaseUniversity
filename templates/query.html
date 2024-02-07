@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+Все запросы на сайте
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> Все запросы на сайте </h1>
+        {% if query|length > 0 %}
+            {% for q in query %}
+                <div class="alert alert-info">
+                    <h2> {{  q.intro }}</h2>
+                    <a href="/query/{{ q.id }}/run" class="btn btn-warning">Выполнить</a>
+                    {% if type_user == 'admin' %}
+                <a href="/query/{{ q.id }}/update" class="btn btn-warning">Редактировать</a>
+                <a href="/query/{{ q.id }}/delete" class="btn btn-warning">Удалить</a>
+                {% endif %}
+                </div>
+            {% endfor %}
+            <div class="alert alert-info">
+                <form method="post">
+                <h2> Вывести все университеты с Менеджментом в рейтинге от <input type="number" name="start"> до <input type="number" name="stop"></h2>
+                <input type="submit" class="btn btn-warning" value="Выполнить"></a>
+                </form>
+            </div>
+        {% else %}
+            <p>У нас еще нет запросов на сайте</p>
+        {% endif %}
+    </div>
+{% endblock %}

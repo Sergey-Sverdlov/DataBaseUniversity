@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+Обновление университета
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1> Изменение информации об университете </h1>
+        <form method="post">
+            <label for="name">Название ВУЗА </label>
+            <input type="text" name="name" id="name" class="form-control" value= {{ university.name }}> <br />
+            <label for="year_construction">Год постройки</label>
+            <input type="number" name="year_construction" id="year_construction" class="form-control" value= {{ university.year_construction }}> <br />
+            <label for="year_repair">Год ремонта</label>
+            <input type="number" name="year_repair" id="year_repair" value= {{ university.year_repair }}><br />
+            <br/>
+            <label for="count_student">Количество студентов</label>
+            <input type="number" name="count_student" id="count_student" value= {{ university.count_student }}  />
+            <br/>
+            <br/>
+            <label for="min_cost">Минимальная стоимость обучения</label>
+            <input type="number" name="min_cost" id="min_cost" value= {{ university.min_cost}} />
+            <br/>
+            <br/>
+            <label for="male">Количество парней</label>
+            <input type="number" name="male" id="male" value= {{ male_female.count_male }}  />
+            <br/>
+            <br/>
+            <label for="female">Количество девушек</label>
+            <input type="number" name="female" id="female" value= {{ male_female.count_female }}  />
+            <br/>
+            <br/>
+            <label for="qs">Позиция ВУЗА в рейтинге QS</label>
+            <input type="number" name="qs" id="qs" value= {{ rank.position_qs }}  />
+            <br/>
+            <br/>
+            <label for="the">Позиция ВУЗА в рейтинге THE</label>
+            <input type="number" name="the" id="the" value= {{ rank.position_the }}  />
+            <br/>
+            <br/>
+            <label for="raex">Позиция ВУЗА в рейтинге RAEX</label>
+            <input type="number" name="raex" id="raex" value= {{ rank.position_raex }}  />
+            <br/>
+            <br/>
+            <textarea name="intro" id="intro" style="width: 900px">{{ university.intro }}</textarea>
+            <br/>
+            <br/>
+            <textarea name="about" id="about" style="width: 900px">{{ university.about }}</textarea>
+            <br/>
+            <br/>
+            <input type="submit" class="btn btn-success" value="Внести информацию об университете">
+        </form>
+    </div>
+{% endblock %}

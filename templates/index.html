@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Бесплатно</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Просмотр всех университетов</li>
+                      <li>Выполнение запросов</li>
+                    </ul>
+                      {% if username|length > 0 %}
+                          <p class="w-100">Здравствуйте, {{ username }}</p>
+                          <a href="lk" class="w-100 btn btn-lg btn-outline-primary">Просмотреть личный кабинет</a>
+                          <br />
+                          <br />
+                          <a href="selected" class="w-100 btn btn-lg btn-outline-primary">Просмотреть избранные вузы</a>
+                          <br />
+                          <br />
+                        <a href="logout" class="w-100 btn btn-lg btn-outline-primary">Выйти из аккаунта</a>
+                      {% else %}
+                        <a href="login" class="w-100 btn btn-lg btn-outline-primary">Войти в личный кабинет</a>
+                        {% endif %}
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Pro</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Просмотр всех университетов</li>
+                      <li>Выполнение запросов</li>
+                      <li>Поддержка</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" disabled>Оплатить</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-white bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Enterprise</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>Просмотр всех университетов</li>
+                      <li>Выполнение запросов</li>
+                      <li>Чат с поддержкой</li>
+                      <li>Добавление собственных запросов</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-primary" disabled>Связаться с нами</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+
+{% endblock %}
